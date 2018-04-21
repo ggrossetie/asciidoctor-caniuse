@@ -1,0 +1,29 @@
+{
+  "name": "asciidoctor-caniuse",
+  "version": "0.1.0",
+  "description": "Asciidoctor extension to request the caniuse API",
+  "main": "dist/node/asciidoctor-caniuse.js",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "asciidoctor.js": "1.5.6"
+  },
+  "repository": "git+https://github.com/mogztter/asciidoctor-caniuse.js.git",
+  "keywords": [
+    "asciidoctor",
+    "caniuse"
+  ],
+  "author": "Guillaume Grossetie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mogztter/asciidoctor-caniuse.js/issues"
+  },
+  "homepage": "https://github.com/mogztter/asciidoctor-caniuse.js#readme",
+  "private": false,
+  "dependencies": {
+    "asciidoctor.js": "^1.5.6",
+    "caniuse-api": "^2.0.0",
+    "mocha": "^5.1.1"
+  }
+}
