@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-asciidoctor.js@^1.5.6:
+asciidoctor.js@1.5.6:
   version "1.5.6"
   resolved "https://registry.yarnpkg.com/asciidoctor.js/-/asciidoctor.js-1.5.6.tgz#12f4810c62ea47867da145e819fc93b0674b5431"
   dependencies:
