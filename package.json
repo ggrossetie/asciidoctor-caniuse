@@ -10,11 +10,12 @@
     "test": "mocha"
   },
   "dependencies": {
-    "caniuse-api": "^2.0.0"
+    "caniuse-api": "2.0.0",
+    "cheerio": "1.0.0-rc.2"
   },
   "devDependencies": {
     "asciidoctor.js": "1.5.6",
-    "mocha": "^5.1.1"
+    "mocha": "5.1.1"
   },
   "peerDependencies": {
     "asciidoctor.js": "1.5.6"

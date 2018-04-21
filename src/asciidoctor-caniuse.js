@@ -1,34 +1,57 @@
 const caniuse = require('caniuse-api')
 
+const browserNames = {
+  baidu: 'Baidu',
+  edge: 'Edge',
+  chrome: 'Chrome',
+  android: 'Android',
+  and_chr: 'Chrome Android',
+  ie: 'IE',
+  firefox: 'Firefox',
+  and_ff: 'Firefox Android',
+  op_mini: 'Opera mini',
+  ie_mob: 'IE Mobile',
+  op_mob: 'Opera Mobile',
+  and_qq: 'QQ',
+  samsung: 'Samsung Internet',
+  and_uc: 'UC for Android',
+  bb: 'Blackberry',
+  ios_saf: 'iOS Safari',
+  safari: 'Safari',
+  opera: 'Opera'
+}
+
 function caniuseInlineMacro () {
   this.named('caniuse')
+  this.positionalAttributes(['scope'])
   this.process((parent, target, attrs) => {
-    const support = caniuse.getSupport(target, true)
-    const browserNames = [];
-    const cells = [];
-    Object.keys(support).map(function (browserId) {
+    const scope = Opal.hash_get(attrs, 'scope') || 'defaults'
+    caniuse.setBrowserScope(scope)
+    const support = caniuse.getSupport(target)
+    const content = Object.keys(support).map(function (browserId) {
       let browserSupport = support[browserId];
-      browserNames.push(browserId); // get browser name
-      if (browserSupport.y) {
-        cells.push({classes: 'caniuse-feat-supported green-background white', value: browserSupport.y})
-      } else if (browserSupport.n) {
-        cells.push({classes: 'caniuse-feat-unsupported red-background white', value: browserSupport.n})
-      } else if (browserSupport.a) {
-        cells.push({classes: 'caniuse-feat-partially-supported yellow-background', value: browserSupport.a})
-      } else if (browserSupport.x) {
-        cells.push({classes: 'caniuse-feat-prefixed olive-background white', value: browserSupport.x})
+      let browserName = browserNames[browserId] || browserId;
+      const infos = [];
+      if (browserSupport.n) {
+        infos.push({classes: 'feat-unsupported', value: browserSupport.n})
       }
+      if (browserSupport.x) {
+        infos.push({classes: 'feat-prefixed', value: browserSupport.x})
+      }
+      if (browserSupport.a) {
+        infos.push({classes: 'feat-partially-supported', value: browserSupport.a})
+      }
+      if (browserSupport.y) {
+        infos.push({classes: 'feat-supported', value: browserSupport.y})
+      }
+      return `<div class="browser">
+  <div class="browser-name">${browserName}</div>
+  <div class="browser-support">
+    ${infos.map((info) => `<div class="${info.classes}">${info.value}</div>`).join('')}
+  </div>
+</div>`
     })
-    return `<table>
-  <thead>
-    <tr>
-      ${browserNames.map((name) => `<th>${name}</th>`).join('')}
-    </tr>
-  </thead>
-  <tbody>
-    <tr>${cells.map((cell) => `<td class="${cell.classes}">${cell.value}</td>`).join('')}</tr>
-  </tbody>
-</table>`
+    return `<div class="caniuse">${content.join('')}</div>`
   })
 }
 
