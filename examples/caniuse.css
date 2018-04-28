@@ -1,0 +1,73 @@
+.caniuse {
+  display: flex;
+}
+
+.browser {
+  text-align: center;
+  margin-right: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .1);
+  color: #4a4a4a;
+  max-width: 100%;
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+
+.browser > .browser-name {
+  padding-bottom: 0.5rem;
+  font-weight: bold;
+  size: 2rem;
+}
+
+.browser > .browser-support > div {
+  margin: 0.1rem;
+  padding: 0.2rem 1rem;
+}
+
+.browser > .browser-support > .browser-version {
+  display: none;
+}
+
+.browser > .browser-support > .feat-supported {
+  background-color: #23d160;
+  color: #fff;
+  font-weight: bold;
+}
+
+.browser > .browser-support > .feat-unsupported {
+  background-color: #ff3860;
+  color: #fff;
+}
+
+.browser-name > span {
+  display: none;
+}
+
+.browser-name::before {
+  display: block;
+  content: ' ';
+  background-size: 2rem 2rem;
+  height: 2rem;
+  width: 2rem;
+  margin: auto;
+}
+
+.browser-name.browser-chrome::before {
+  background-image: url('./node_modules/@browser-logos/chrome/chrome.svg');
+}
+
+.browser-name.browser-edge::before {
+  background-image: url('./node_modules/@browser-logos/edge/edge.svg');
+}
+
+.browser-name.browser-firefox::before {
+  background-image: url('./node_modules/@browser-logos/firefox/firefox.svg');
+}
+
+.browser-name.browser-opera::before {
+  background-image: url('./node_modules/@browser-logos/opera/opera.svg');
+}
+
+.browser-name.browser-safari::before {
+  background-image: url('./node_modules/@browser-logos/safari/safari.png');
+}
