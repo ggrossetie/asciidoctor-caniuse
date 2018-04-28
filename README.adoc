@@ -19,9 +19,9 @@ const registry = caniuseExtension.register(asciidoctor.Extensions.create())
 asciidoctor.convertFile('sample.adoc', {extension_registry: registry})
 ```
 
-.Rendering
-image::rendering.jpeg[]
+== Rendering
 
+image::rendering.jpeg[]
 
 [NOTE]
 ====
