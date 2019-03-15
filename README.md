@@ -6,7 +6,7 @@ An extension for [Asciidoctor.js](https://github.com/asciidoctor/asciidoctor.js)
 
 ## Install
 
-    $ npm i asciidoctor-caniuse
+    $ npm i asciidoctor.js asciidoctor-caniuse
 
 ## Usage
 
