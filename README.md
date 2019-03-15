@@ -1,6 +1,6 @@
 # :earth_africa: "Can I Use" Extension for Asciidoctor.js
 
-![Travis build status](https://img.shields.io/travis/Mogztter/asciidoctor-caniuse/master.svg)
+[![Travis build status](https://img.shields.io/travis/Mogztter/asciidoctor-caniuse/master.svg)](https://travis-ci.org/Mogztter/asciidoctor-caniuse)
 
 An extension for [Asciidoctor.js](https://github.com/asciidoctor/asciidoctor.js) to render browser support tables for modern web technologies.
 
