@@ -1,8 +1,9 @@
 {
   "name": "asciidoctor-caniuse",
-  "version": "0.1.0",
+  "version": "0.1.0-master",
   "description": "Asciidoctor extension to request the caniuse API",
   "main": "dist/node/asciidoctor-caniuse.js",
+  "browser": "dist/browser/asciidoctor-caniuse.js",
   "files": [
     "dist"
   ],
