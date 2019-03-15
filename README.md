@@ -2,7 +2,7 @@
 
 ![Travis build status](https://img.shields.io/travis/Mogztter/asciidoctor-caniuse/master.svg)
 
-An extension for [Asciidoctor.js](https://github.com/asciidoctor/asciidoctor.js) to render a browser support table for modern web technologies.
+An extension for [Asciidoctor.js](https://github.com/asciidoctor/asciidoctor.js) to render browser support tables for modern web technologies.
 
 ## Install
 
