@@ -16,12 +16,12 @@
     "dist:node": "mkdir -p dist/node && cp src/**.js dist/node/"
   },
   "dependencies": {
-    "caniuse-api": "3.0.0",
-    "cheerio": "1.0.0-rc.2"
+    "caniuse-api": "3.0.0"
   },
   "devDependencies": {
     "asciidoctor.js": "1.5.9",
     "browserify": "16.2.3",
+    "cheerio": "1.0.0-rc.2",
     "mocha": "5.1.1",
     "standard": "12.0.1"
   },
