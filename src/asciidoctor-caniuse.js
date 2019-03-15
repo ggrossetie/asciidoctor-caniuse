@@ -1,5 +1,4 @@
 const caniuse = require('caniuse-api')
-const browserslist = require('browserslist')
 
 const browserNames = {
   baidu: 'Baidu',
@@ -29,9 +28,7 @@ function caniuseInlineMacro() {
     const scope = Opal.hash_get(attrs, 'scope') || 'last 1 Chrome versions,last 1 Firefox versions,last 1 Edge versions,last 1 Safari versions,last 1 Opera versions'
     caniuse.setBrowserScope(scope)
     const support = caniuse.getSupport(target)
-    //const latestStableBrowsers = caniuse.getLatestStableBrowsers()
-    // workaround, waiting for a new release of https://github.com/Nyalab/caniuse-api
-    const latestStableBrowsers = browserslist("last 1 version")
+    const latestStableBrowsers = caniuse.getLatestStableBrowsers()
       .map((value) => {
         const parts = value.split(' ')
         return {id: parts[0], version: parts[1]}
@@ -43,7 +40,7 @@ function caniuseInlineMacro() {
     const content = Object.keys(support).map(function (browserId) {
       let browserSupport = support[browserId];
       let browserName = browserNames[browserId] || browserId;
-      let lastestStableVersion = latestStableBrowsers[browserId];
+      let latestStableVersion = latestStableBrowsers[browserId];
       const infos = [];
       if (browserSupport.n) {
         infos.push({classes: 'browser-version feat-unsupported', value: browserSupport.n})
@@ -57,15 +54,15 @@ function caniuseInlineMacro() {
       if (browserSupport.y) {
         infos.push({classes: 'browser-version feat-supported', value: browserSupport.y})
       }
-      if (lastestStableVersion) {
+      if (latestStableVersion) {
         let support = 'feat-unsupported'
         if (browserSupport.n && browserSupport.n > browserSupport.y) {
           // not supported anymore
-        } else if (browserSupport.y && lastestStableVersion >= browserSupport.y) {
+        } else if (browserSupport.y && latestStableVersion >= browserSupport.y) {
           // supported on the latest stable version
           support = 'feat-supported'
         }
-        infos.push({classes: `browser-latest-stable-version ${support}`, value: lastestStableVersion})
+        infos.push({classes: `browser-latest-stable-version ${support}`, value: latestStableVersion})
       }
       return `<div class="browser">
   <div class="browser-name browser-${browserId}"><span>${browserName}</span></div>

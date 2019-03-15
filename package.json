@@ -7,29 +7,36 @@
     "dist"
   ],
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "standard src test examples",
+    "clean": "rm -rf dist/*",
+    "dist": "npm run clean && npm run dist:browser && npm run dist:node",
+    "dist:browser": "mkdir -p dist/browser && browserify src/asciidoctor-caniuse.js --standalone AsciidoctorCanIUse -o dist/browser/asciidoctor-caniuse.js",
+    "dist:node": "mkdir -p dist/node && cp src/**.js dist/node/"
   },
   "dependencies": {
-    "caniuse-api": "2.0.0",
+    "caniuse-api": "3.0.0",
     "cheerio": "1.0.0-rc.2"
   },
   "devDependencies": {
-    "asciidoctor.js": "1.5.6",
-    "mocha": "5.1.1"
+    "asciidoctor.js": "1.5.9",
+    "mocha": "5.1.1",
+    "standard": "12.0.1"
   },
   "peerDependencies": {
-    "asciidoctor.js": "1.5.6"
+    "asciidoctor.js": "1.5.9"
   },
-  "repository": "git+https://github.com/mogztter/asciidoctor-caniuse.js.git",
+  "repository": "git+https://github.com/mogztter/asciidoctor-caniuse.git",
   "keywords": [
     "asciidoctor",
+    "extension",
     "caniuse"
   ],
   "author": "Guillaume Grossetie",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mogztter/asciidoctor-caniuse.js/issues"
+    "url": "https://github.com/mogztter/asciidoctor-caniuse/issues"
   },
-  "homepage": "https://github.com/mogztter/asciidoctor-caniuse.js#readme",
+  "homepage": "https://github.com/mogztter/asciidoctor-caniuse#readme",
   "private": false
 }

@@ -10,12 +10,12 @@ describe('Asciidoctor caniuse extension', function () {
   it('should create a support table', function () {
     const html = asciidoctor.convert('caniuse:battery-status[scope="defaults"]', {extension_registry: registry})
     const dom = cheerio.load(html)
-    assert.equal(dom('.caniuse').find('.browser').length, 18)
+    assert.strictEqual(dom('.caniuse').find('.browser').length, 17)
   });
 
   it('should create a support table using a restricted scope (modern desktop browsers)', function () {
     const html = asciidoctor.convert('caniuse:battery-status[]', {extension_registry: registry})
     const dom = cheerio.load(html)
-    assert.equal(dom('.caniuse').find('.browser').length, 5)
+    assert.strictEqual(dom('.caniuse').find('.browser').length, 5)
   });
 });

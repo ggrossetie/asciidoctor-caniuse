@@ -47,13 +47,14 @@
   display: block;
   content: ' ';
   background-size: 2rem 2rem;
+  background-repeat: no-repeat;
   height: 2rem;
   width: 2rem;
-  margin: auto;
+  margin: auto auto .25rem;
 }
 
 .browser-name.browser-chrome::before {
-  background-image: url('./node_modules/@browser-logos/chrome/chrome.svg');
+  background: url('./node_modules/@browser-logos/chrome/chrome.svg');
 }
 
 .browser-name.browser-edge::before {
