@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "asciidoctor.js": "1.5.9",
+    "browserify": "16.2.3",
     "mocha": "5.1.1",
     "standard": "12.0.1"
   },
