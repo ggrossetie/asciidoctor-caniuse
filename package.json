@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "test": "mocha",
-    "lint": "standard src test examples",
+    "lint": "standard src/**.js test/**.js examples/**.js",
     "clean": "rm -rf dist/*",
     "dist": "npm run clean && npm run dist:browser && npm run dist:node",
     "dist:browser": "mkdir -p dist/browser && browserify src/asciidoctor-caniuse.js --standalone AsciidoctorCanIUse -o dist/browser/asciidoctor-caniuse.js",
@@ -38,5 +38,10 @@
     "url": "https://github.com/mogztter/asciidoctor-caniuse/issues"
   },
   "homepage": "https://github.com/mogztter/asciidoctor-caniuse#readme",
-  "private": false
+  "private": false,
+  "standard": {
+    "env": [
+      "mocha"
+    ]
+  }
 }
