@@ -14,7 +14,7 @@ In your document, use the `caniuse` macro with the name of the feature:
 
 ```
 .battery status
-caniuse:battery-status[]
+caniuse::battery-status[]
 ```
 
 Register the extension before converting your document:

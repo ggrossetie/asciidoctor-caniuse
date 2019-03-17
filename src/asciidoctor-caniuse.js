@@ -21,10 +21,11 @@ const browserNames = {
   opera: 'Opera'
 }
 
-function caniuseInlineMacro () {
-  this.named('caniuse')
-  this.positionalAttributes(['scope'])
-  this.process((parent, target, attrs) => {
+function caniuseBlockMacro () {
+  const self = this
+  self.named('caniuse')
+  self.positionalAttributes(['scope'])
+  self.process((parent, target, attrs) => {
     const scope = attrs.scope || 'last 1 Chrome versions,last 1 Firefox versions,last 1 Edge versions,last 1 Safari versions,last 1 Opera versions'
     caniuse.setBrowserScope(scope)
     const support = caniuse.getSupport(target)
@@ -78,10 +79,10 @@ function caniuseInlineMacro () {
 module.exports.register = function register (registry) {
   if (typeof registry.register === 'function') {
     registry.register(function () {
-      this.inlineMacro(caniuseInlineMacro)
+      this.blockMacro(caniuseBlockMacro)
     })
   } else if (typeof registry.block === 'function') {
-    registry.inlineMacro(caniuseInlineMacro)
+    registry.blockMacro(caniuseBlockMacro)
   }
   return registry
 }
