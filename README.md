@@ -21,7 +21,7 @@ Register the extension before converting your document:
 
 ```js
 const asciidoctor = require('asciidoctor.js')()
-const caniuseExtension = require('asciidoctor-caniuse.js')
+const caniuseExtension = require('asciidoctor-caniuse')
 const registry = caniuseExtension.register(asciidoctor.Extensions.create())
 
 asciidoctor.convertFile('sample.adoc', { extension_registry: registry })
@@ -30,5 +30,3 @@ asciidoctor.convertFile('sample.adoc', { extension_registry: registry })
 ## Rendering
 
 ![](rendering.jpeg)
-
-**NOTE**: You can use a `docinfo` file to add custom stylesheet. See the `examples` directory.

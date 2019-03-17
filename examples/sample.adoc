@@ -1,7 +1,6 @@
 = Can I use this feature ?
-:docinfo: shared
 
 Let's find out!
 
 .battery status
-caniuse:battery-status[]
+caniuse::battery-status[]
