@@ -21,7 +21,7 @@
   "devDependencies": {
     "asciidoctor.js": "1.5.9",
     "browserify": "16.2.3",
-    "cheerio": "1.0.0-rc.2",
+    "cheerio": "1.0.0-rc.3",
     "mocha": "5.1.1",
     "standard": "12.0.1"
   },
