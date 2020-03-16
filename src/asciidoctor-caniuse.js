@@ -39,9 +39,9 @@ function caniuseBlockMacro () {
         return json
       }, {})
     const content = Object.keys(support).map(function (browserId) {
-      let browserSupport = support[browserId]
-      let browserName = browserNames[browserId] || browserId
-      let latestStableVersion = latestStableBrowsers[browserId]
+      const browserSupport = support[browserId]
+      const browserName = browserNames[browserId] || browserId
+      const latestStableVersion = latestStableBrowsers[browserId]
       const infos = []
       if (browserSupport.n) {
         infos.push({ classes: 'browser-version feat-unsupported', value: browserSupport.n })
