@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "asciidoctor.js": "1.5.9",
-    "browserify": "16.5.0",
+    "browserify": "16.5.1",
     "cheerio": "1.0.0-rc.3",
     "mocha": "7.1.1",
     "standard": "14.3.3"
