@@ -23,7 +23,7 @@
     "browserify": "17.0.0",
     "cheerio": "1.0.0-rc.3",
     "mocha": "8.2.1",
-    "standard": "16.0.2"
+    "standard": "16.0.3"
   },
   "peerDependencies": {
     "asciidoctor.js": "1.5.9"
